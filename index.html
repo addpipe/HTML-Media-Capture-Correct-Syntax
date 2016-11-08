@@ -1,19 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<title>HTML Media Capture Syntax Examples</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 	<form action="server.cgi" method="post" enctype="multipart/form-data">
-		<h2>Single Input</h2>
-		<p>Accept video single input no capture: <input type="file" name="video" accept="video/*" ></p>
-		<p>Accept video single input capture: <input type="file" name="video" accept="video/*" capture></p>
+		<h1>Video recording</h1>
+		
+		<h2>Single input</h2>
+		
+		<h3>no capture</h3>
+		<p><code>&lt;input type="file"  accept="video/*" &gt;</code></p>
+		<p><input type="file" accept="video/*" ></p>
+		
+		<h3><code>capture</code> as boolean (camcorder is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot; accept=&quot;video/*&quot; capture&gt;</code></p>
+		<p><input type="file"  accept="video/*" capture></p>
 
-		<h2>Multiple Inputs</h2>
-		<p>Accept video multiple inputs no capture: <input type="file" name="video" accept="video/*" multiple></p>
-		<p>Accept video multiple inputs capture: <input type="file" name="video" accept="video/*" multiple capture></p>
+		<h3><code>capture</code> as string (camcorder is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot;  accept=&quot;video/*&quot; capture=&quot;camcorder&quot;&gt;</code></p>
+		<p><input type="file" accept="video/*" capture="camcorder"></p>
+
+		<h3><code>capture</code> as string (filesystem is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot;  accept=&quot;video/*&quot; capture=&quot;filesystem&quot;&gt;</code></p>
+		<p><input type="file" accept="video/*" capture="filesystem"></p>
+
+		<h3><code>capture</code> part of accept (camcorder is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot; accept=&quot;video/*;capture=camcorder&quot;&gt;</code></p>
+		<p><input type="file" accept="video/*;capture=camcorder"></p>
+
+		
+		<h2>Multiple inputs</h2>
+
+		<h3>no capture</h3>
+		<p><code>&lt;input type=&quot;file&quot;  accept=&quot;video/*&quot; multiple&gt;</code></p>
+		<p><input type="file" accept="video/*" multiple></p>
+
+		<h3><code>capture</code> as boolean (camcorder is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot; accept=&quot;video/*&quot; multiple capture&gt;</code></p>
+		<p><input type="file" accept="video/*" multiple capture></p>
+
+		<h3><code>capture</code> as string (camcorder is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot; accept=&quot;video/*&quot; multiple capture=&quot;camcorder&quot;&gt;</code></p>
+		<p><input type="file" accept="video/*" multiple capture="camcorder"></p>
+
+		<h3><code>capture</code> as string (filesystem is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot;  accept=&quot;video/*&quot; multiple capture=&quot;filesystem&quot;&gt;</code></p>
+		<p><input type="file" accept="video/*" multiple capture="filesystem"></p>
+
 		<!--<input type="submit" value="Upload">-->
+
+		<h3><code>capture</code> part of accept (camcorder is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot; accept=&quot;video/*;capture=camcorder&quot; multiple&gt;</code></p>
+		<p><input type="file" accept="video/*;capture=camcorder" multiple></p>
+
+		<h1>Audio recording</h1>
+
+		<h2>Single input</h2>
+		
+		<h3>no capture</h3>
+		<p><code>&lt;input type="file"  accept="audio/*" &gt;</code></p>
+		<p><input type="file" accept="audio/*" ></p>
+		
+		<h3><code>capture</code> as boolean (mic is preferred)</h3>
+		<p><code>&lt;input type="file" accept="audio/*" capture&gt;</code></p>
+		<p><input type="file"  accept="audio/*" capture></p>
+
+		<h3><code>capture</code> as string (mic is preferred)</h3>
+		<p><code>&lt;input type="file"  accept="audio/*" capture="microphone"&gt;</code></p>
+		<p><input type="file" accept="audio/*" capture="microphone"></p>
+
+		<h3><code>capture</code> as string (filesystem is preferred)</h3>
+		<p><code>&lt;input type="file"  accept="audio/*" capture="filesystem"&gt;</code></p>
+		<p><input type="file" accept="audio/*" capture="filesystem"></p>
+
+		<h3><code>capture</code> part of accept (mic is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot; accept=&quot;audio/*;capture=microphone&quot;&gt;</code></p>
+		<p><input type="file" accept="audio/*;capture=microphone"></p>
+
+
+		<h1>Take a snapshot</h1>
+
+		<h2>Single input</h2>
+		
+		<h3>no capture</h3>
+		<p><code>&lt;input type="file"  accept="image/*" &gt;</code></p>
+		<p><input type="file" accept="image/*" ></p>
+		
+		<h3><code>capture</code> as boolean (camera is preferred)</h3>
+		<p><code>&lt;input type="file" accept="image/*" capture&gt;</code></p>
+		<p><input type="file"  accept="image/*" capture></p>
+
+		<h3><code>capture</code> as string (camera is preferred)</h3>
+		<p><code>&lt;input type="file"  accept="image/*" capture="camera"&gt;</code></p>
+		<p><input type="file" accept="image/*" capture="camera"></p>
+
+		<h3><code>capture</code> as string (filesystem is preferred)</h3>
+		<p><code>&lt;input type="file"  accept="image/*" capture="filesystem"&gt;</code></p>
+		<p><input type="file" accept="image/*" capture="filesystem"></p>
+
+		<h3><code>capture</code> part of accept (camera is preferred)</h3>
+		<p><code>&lt;input type=&quot;file&quot; accept=&quot;image/*;capture=camera&quot;&gt;</code></p>
+		<p><input type="file" accept="image/*;capture=camera"></p>
 	</form>
 </body>
 </html>
