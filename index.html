@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>HTML Media Capture Syntax Examples</title>
+</head>
+<body>
+	<form action="server.cgi" method="post" enctype="multipart/form-data">
+		<p>Accept video multiple inputs no capture: <input type="file" name="video" accept="video/*" multiple></p>
+		<p>Accept video single input no capture: <input type="file" name="video" accept="video/*" ></p>
+
+		<p>Accept video multiple inputs capture: <input type="file" name="video" accept="video/*" multiple capture></p>
+		<p>Accept video single input capture: <input type="file" name="video" accept="video/*" capture></p>
+		<!--<input type="submit" value="Upload">-->
+	</form>
+</body>
+</html>
