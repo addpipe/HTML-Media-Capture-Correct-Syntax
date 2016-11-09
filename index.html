@@ -105,6 +105,22 @@
 		<h3><code>capture</code> part of accept (camera is preferred)</h3>
 		<p><code>&lt;input type=&quot;file&quot; accept=&quot;image/*;capture=camera&quot;&gt;</code></p>
 		<p><input type="file" accept="image/*;capture=camera"></p>
+
+		<h1>Snapshot + Video Together</h1>
+		<h2>Single input</h2>
+		
+		<h3>no capture</h3>
+		<p><code>&lt;input type="file"  accept="image/*,video/*" &gt;</code></p>
+		<p><input type="file" accept="image/*,video/*" ></p>
+		
+		<h3><code>capture</code> as boolean (camera is preferred)</h3>
+		<p><code>&lt;input type="file" accept="image/*,video/*" capture&gt;</code></p>
+		<p><input type="file"  accept="image/*,video/*" capture></p>
+
+		<h3><code>capture</code> as string (camera is preferred)</h3>
+		<p><code>&lt;input type="file"  accept="image/*,video/*" capture="camera"&gt;</code></p>
+		<p><input type="file" accept="image/*,video/*" capture="camera"></p>
+		
 	</form>
 </body>
 </html>
