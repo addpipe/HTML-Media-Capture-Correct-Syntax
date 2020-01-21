@@ -56,9 +56,12 @@ red {
 <body>
 	<form action="server.cgi" method="post" enctype="multipart/form-data">
 		<h1>HTML Media Capture Examples</h1>
+		<p><small>Made by the <a href="https://addpipe.com">Pipe Recording Platform</a></small></p>
 		<p>These examples are based on the latest <strong>HTML Media Capture</strong> spec, a <em>W3C Recommendation</em> spec from 01 February 2018 (<a href="https://www.w3.org/TR/2018/REC-html-media-capture-20180201/" target="_blank">link</a>).</p>
 		<p>As opposed to earlier versions of the spec, the <code>capture</code> attribute is now an <em>enumerated attribute</em> (list of strings) instead of a boolean. The change allows the developer to specify the <strong>preferrerd</strong> facing mode (user or environment) when recording straight from the hardware (camera, microphone, etc.).</p>
 		
+		<hr>
+
 		<h2>Video recording: single file</h2>
 		
 		<p><strong>Example 1:</strong> The simplest way to use HTML Media Capture for capturing video is to use the following line. It should allow the user to both select a video from the library AND record a new video on the spot.</p>
@@ -92,12 +95,12 @@ red {
 		<p><input type="file" accept="video/*;capture=camcorder"></p>
 
 		-->
-
+		<hr>
 		
 		<h2>Video recoring: multiple files</h2>
 
 		<p><strong>Example 5:</strong> By using the <code>multiple</code> attribute, users will be allowed to select multiple videos from their library. This works on Safari on iOS which is the device I've tested on multiple times. Make sure you omit the <code>capture</code> attribute here, otherwise the option to choose existing files from the library might not be presented.</p>
-		<pre><code>&lt;input type=&quot;file&quot;  accept=&quot;video/*&quot; multiple&gt;</code></pre>
+		<pre><code class="html">&lt;input type=&quot;file&quot;  accept=&quot;video/*&quot; multiple&gt;</code></pre>
 		<p><input type="file" accept="video/*" multiple></p>
 
 		<!--
@@ -120,14 +123,16 @@ red {
 
 		-->
 
+		<hr>
+
 		<h2>Audio recording: single file</h2>
 		
 		<p><strong>Example 6:</strong> Asking for an audio recording instead of a video recording is as simple as changing the value of the <code>accept</code> attribute to <code>audio/*</code>. Audio only recording does not work on iOS (tested up to 13.3) and one some Android devices.</p>
-		<pre><code>&lt;input type="file"  accept="audio/*" &gt;</code></pre>
+		<pre><code class="html">&lt;input type="file"  accept="audio/*" &gt;</code></pre>
 		<p><input type="file" accept="audio/*" ></p>
 		
 		<p> <strong>Example 7:</strong> Adding the <code>capture</code> attribute here should force a new audio recording instead of allowing the user to select an existing one from the library. <red>This crashed Safari on all versions of iOS 13 (tested up to 13.3) (<a href="https://bugs.webkit.org/show_bug.cgi?id=202039" target="_blank">reported bug</a>).</red></p>
-		<pre><code>&lt;input type="file" accept="audio/*" capture&gt;</code></pre>
+		<pre><code class="html">&lt;input type="file" accept="audio/*" capture&gt;</code></pre>
 		<p><input type="file"  accept="audio/*" capture></p>
 
 		<!--
@@ -146,14 +151,16 @@ red {
 
 		-->
 
+		<hr>
+
 		<h2>Photo: single file</h2>
 		
 		<p><strong>Example 8:</strong> This code allows the user to select a photo from his or her library OR take a new one using the camera app</p>
-		<pre><code>&lt;input type="file"  accept="image/*" &gt;</code></pre>
+		<pre><code class="html">&lt;input type="file"  accept="image/*" &gt;</code></pre>
 		<p><input type="file" accept="image/*" ></p>
 		
 		<p><strong>Example 9:</strong> By adding the <code>capture</code> attribute users will be prompted to capture a photo on the spot using the camera app</p>
-		<pre><code>&lt;input type="file" accept="image/*" capture&gt;</code></pre>
+		<pre><code class="html">&lt;input type="file" accept="image/*" capture&gt;</code></pre>
 		<p><input type="file"  accept="image/*" capture></p>
 		
 		<p><strong>Example 10 &amp; 11:</strong> Per the <a href="https://www.w3.org/TR/2018/REC-html-media-capture-20180201/" target="_blank">newer versions of the spec</a> you can indicate your <strong>preferred</strong> facing mode for the camera: front (user) or back (environment). Use the 2 examples below to test support for these new values on your browser, OS or device.</h3>
@@ -178,15 +185,16 @@ red {
 		<p><input type="file" accept="image/*;capture=camera"></p>
 
 		-->
+		<hr>
 
 		<h2>Photo or video: single file</h2>
 		
 		<p><strong>Example 12:</strong> The code below should allow the user to select or capture a video OR a photo</p>
-		<pre><code>&lt;input type="file"  accept="image/*,video/*" &gt;</code></pre>
+		<pre><code class="html">&lt;input type="file"  accept="image/*,video/*" &gt;</code></pre>
 		<p><input type="file" accept="image/*,video/*" ></p>
 		
 		<p><strong>Example 13:</strong> The code below should allow the user to only capture a new video OR a photo</p>
-		<pre><code>&lt;input type="file" accept="image/*,video/*" capture&gt;</code></pre>
+		<pre><code class="html">&lt;input type="file" accept="image/*,video/*" capture&gt;</code></pre>
 		<p><input type="file"  accept="image/*,video/*" capture></p>
 
 		<!--
